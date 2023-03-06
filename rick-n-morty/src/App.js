@@ -5,35 +5,25 @@ import Cards from "./Cards";
 
 
 function App() {
-  const [cardList, setCardList] = React.useState({})
+  const [cardList, setCardList] = React.useState([])
 
   async function getAPI() {
-    await fetch(`https://rickandmortyapi.com/api/character/1`)
+    await fetch(`https://rickandmortyapi.com/api/character`)
       .then(response => response.json())
-      .then(data => setCardList(data));
+      .then(data => setCardList(data.results));
   }
 
   React.useEffect(() => {
     getAPI();
-    console.log(cardList)
-  }, []);
 
+  }, []);
  
 
+console.log(cardList)
   return (
     <div className="container-sm">
-      <Cards
-      text = {cardList}
-      />
-      <Cards
-      text = {cardList}
-      />
-      <Cards
-      text = {cardList}
-      />
-      <Cards
-      text = {cardList}
-      />
+      {/* <CardsArray/> */}
+      <Cards characters ={cardList}/>
     </div>
   );
 }
