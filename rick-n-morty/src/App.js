@@ -22,7 +22,6 @@ function App() {
 console.log(cardList)
   return (
     <div className="container-sm">
-      {/* <CardsArray/> */}
       <Cards characters ={cardList}/>
     </div>
   );

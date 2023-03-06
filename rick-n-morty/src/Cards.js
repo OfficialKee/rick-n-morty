@@ -1,9 +1,9 @@
 import React from "react"
 
-const Cards =(props) => {
+const Cards =({characters}) => {
    
 
-       const theBlock = props.characters.map(card=>{
+       const theBlock = characters.map(card=>{
         return (
             <div className="card" width='50 px' height='50px'>
                 <img src={card.image} className="card-img-top" alt="..." height='50 px' width='50 px'/>
